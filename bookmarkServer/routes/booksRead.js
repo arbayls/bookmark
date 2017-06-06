@@ -1,8 +1,9 @@
+
 var express = require('express');
 var router = express.Router();
 var knex = require('../db');
 
-/* GET all Read Books. */
+// GET all Read Books.
 router.get('/:userId', function(req, res, next) {
   knex.raw(`SELECT * FROM booksread WHERE user_id=${req.params.userId}`).then(function(books) {
     res.json(books);
@@ -17,7 +18,7 @@ router.delete('/:userId/:bookId/delete', function (req, res, next) {
   });
 });
 
-//GET one book
+// GET one book
 router.get('/:userId/edit/:bookId', function (req, res, next) {
   var id = req.params.id;
   knex.raw(`SELECT * from booksread WHERE id=${req.params.id}`).then(function(book) {
@@ -25,14 +26,14 @@ router.get('/:userId/edit/:bookId', function (req, res, next) {
   });
 });
 
-//Edit book
+// Edit book
 router.post('/:userId/edit/:bookId', function(req, res, next) {
   knex.raw(`SELECT * FROM booksread WHERE book_id=${req.params.bookId}`).then(function(book) {
     res.redirect('/:userId')
   });
 });
 
-//Increment votes
+// Increment votes
 router.post('/:userId/votes', (req, res, next) => {
   knex('books')
     .update('vote_count', knex.raw('vote_count + 1'))
@@ -42,7 +43,7 @@ router.post('/:userId/votes', (req, res, next) => {
     .catch(err => next(err))
 })
 
-//Decrement votes
+// Decrement votes
 router.delete('/:userId/votes', (req, res, next) => {
   knex('books')
     .update('vote_count', knex.raw('vote_count - 1'))
