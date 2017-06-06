@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+    <Request>
+        <authentication>true</authentication>
+        <key>
+            <![CDATA[GIlk8fvwqQpBvketlOTFTQ]]>
+        </key>
+        <method>
+            <![CDATA[book_title]]>
+        </method>
+    </Request>
+    <book>
+        <id>33212436</id>
+        <title>
+            <![CDATA[The Hound of the Baskervilles Arthur Conan Doyle]]>
+        </title>
+        <isbn>
+            <![CDATA[1540522806]]>
+        </isbn>
+        <isbn13>
+            <![CDATA[9781540522801]]>
+        </isbn13>
+        <asin>
+            <![CDATA[]]>
+        </asin>
+        <kindle_asin>
+            <![CDATA[B018ADH5CY]]>
+        </kindle_asin>
+        <marketplace_id>
+            <![CDATA[ATVPDKIKX0DER]]>
+        </marketplace_id>
+        <country_code>
+            <![CDATA[US]]>
+        </country_code>
+        <image_url>https://images.gr-assets.com/books/1480658784m/33212436.jpg</image_url>
+        <small_image_url>https://images.gr-assets.com/books/1480658784s/33212436.jpg</small_image_url>
+        <publication_year>2016</publication_year>
+        <publication_month>11</publication_month>
+        <publication_day>21</publication_day>
+        <publisher>Createspace Independent Publishing Platform</publisher>
+        <language_code></language_code>
+        <is_ebook>false</is_ebook>
+        <description>
+            <![CDATA[The Hound of the Baskervilles is the third of the crime novels written by Sir Arthur Conan Doyle featuring the detective Sherlock Holmes. Originally serialised in The Strand Magazine from August 1901 to April 1902, it is set largely on Dartmoor in Devon in England's West Country and tells the story of an attempted murder inspired by the legend of a fearsome, diabolical hound of supernatural origin. Sherlock Holmes and his companion Dr. Watson investigate the case. This was the first appearance of Holmes since his apparent death in "The Final Problem," and the success of The Hound of the Baskervilles led to the character's eventual revival. In 2003, the book was listed as number 128 of 200 on the BBC's The Big Read poll of the UK's "best-loved novel." In 1999, it was listed as the top Holmes novel, with a perfect rating from Sherlockian scholars of 100.]]>
+        </description>
+        <work>
+            <id type="integer">53914673</id>
+            <books_count type="integer">1</books_count>
+            <best_book_id type="integer">33212436</best_book_id>
+            <reviews_count type="integer">7</reviews_count>
+            <ratings_sum type="integer">9</ratings_sum>
+            <ratings_count type="integer">2</ratings_count>
+            <text_reviews_count type="integer">1</text_reviews_count>
+            <original_publication_year type="integer" nil="true"/>
+            <original_publication_month type="integer" nil="true"/>
+            <original_publication_day type="integer" nil="true"/>
+            <original_title nil="true"/>
+            <original_language_id type="integer" nil="true"/>
+            <media_type nil="true"/>
+            <rating_dist>5:1|4:1|3:0|2:0|1:0|total:2</rating_dist>
+            <desc_user_id type="integer">-51</desc_user_id>
+            <default_chaptering_book_id type="integer" nil="true"/>
+            <default_description_language_code nil="true"/>
+        </work>
+        <average_rating>4.50</average_rating>
+        <num_pages>
+            <![CDATA[]]>
+        </num_pages>
+        <format>
+            <![CDATA[Paperback]]>
+        </format>
+        <edition_information>
+            <![CDATA[]]>
+        </edition_information>
+        <ratings_count>
+            <![CDATA[2]]>
+        </ratings_count>
+        <text_reviews_count>
+            <![CDATA[1]]>
+        </text_reviews_count>
+        <url>
+            <![CDATA[https://www.goodreads.com/book/show/33212436-the-hound-of-the-baskervilles-arthur-conan-doyle]]>
+        </url>
+        <link>
+            <![CDATA[https://www.goodreads.com/book/show/33212436-the-hound-of-the-baskervilles-arthur-conan-doyle]]>
+        </link>
+        <authors>
+            <author>
+                <id>2448</id>
+                <name>Arthur Conan Doyle</name>
+                <role></role>
+                <image_url nophoto='false'>
+                    <![CDATA[https://images.gr-assets.com/authors/1495008883p5/2448.jpg]]>
+                </image_url>
+                <small_image_url nophoto='false'>
+                    <![CDATA[https://images.gr-assets.com/authors/1495008883p2/2448.jpg]]>
+                </small_image_url>
+                <link>
+                    <![CDATA[https://www.goodreads.com/author/show/2448.Arthur_Conan_Doyle]]>
+                </link>
+                <average_rating>4.21</average_rating>
+                <ratings_count>1348049</ratings_count>
+                <text_reviews_count>40357</text_reviews_count>
+            </author>
+        </authors>
+        <reviews_widget>
+            <![CDATA[
+        <style>
+  #goodreads-widget {
+    font-family: georgia, serif;
+    padding: 18px 0;
+    width:565px;
+  }
+  #goodreads-widget h1 {
+    font-weight:normal;
+    font-size: 16px;
+    border-bottom: 1px solid #BBB596;
+    margin-bottom: 0;
+  }
+  #goodreads-widget a {
+    text-decoration: none;
+    color:#660;
+  }
+  iframe{
+    background-color: #fff;
+  }
+  #goodreads-widget a:hover { text-decoration: underline; }
+  #goodreads-widget a:active {
+    color:#660;
+  }
+  #gr_footer {
+    width: 100%;
+    border-top: 1px solid #BBB596;
+    text-align: right;
+  }
+  #goodreads-widget .gr_branding{
+    color: #382110;
+    font-size: 11px;
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+</style><div id="goodreads-widget"><div id="gr_header"><h1><a href="https://www.goodreads.com/book/show/33212436-the-hound-of-the-baskervilles-arthur-conan-doyle">The Hound of the Baskervilles Arthur Conan Doyle Reviews</a></h1></div><iframe id="the_iframe" src="https://www.goodreads.com/api/reviews_widget_iframe?did=DEVELOPER_ID&amp;format=html&amp;isbn=1540522806&amp;links=660&amp;min_rating=&amp;review_back=fff&amp;stars=000&amp;text=000" width="565" height="400" frameborder="0"></iframe><div id="gr_footer"><a class="gr_branding" target="_blank" href="https://www.goodreads.com/book/show/33212436-the-hound-of-the-baskervilles-arthur-conan-doyle?utm_medium=api&amp;utm_source=reviews_widget">Reviews from Goodreads.com</a></div></div>
+
+      ]]>
+
+</reviews_widget>
+<popular_shelves>
+    <shelf name="to-read" count="2"/>
+    <shelf name="not-owned" count="1"/>
+</popular_shelves>
+<book_links>
+    <book_link>
+        <id>8</id>
+        <name>Libraries</name>
+        <link>https://www.goodreads.com/book_link/follow/8</link>
+    </book_link>
+</book_links>
+<buy_links>
+    <buy_link>
+        <id>1</id>
+        <name>Amazon</name>
+        <link>https://www.goodreads.com/book_link/follow/1</link>
+    </buy_link>
+    <buy_link>
+        <id>10</id>
+        <name>Audible</name>
+        <link>https://www.goodreads.com/book_link/follow/10</link>
+    </buy_link>
+    <buy_link>
+        <id>3</id>
+        <name>Barnes &amp; Noble</name>
+        <link>https://www.goodreads.com/book_link/follow/3</link>
+    </buy_link>
+    <buy_link>
+        <id>1027</id>
+        <name>Kobo</name>
+        <link>https://www.goodreads.com/book_link/follow/1027</link>
+    </buy_link>
+    <buy_link>
+        <id>2102</id>
+        <name>Apple iBooks</name>
+        <link>https://www.goodreads.com/book_link/follow/2102</link>
+    </buy_link>
+    <buy_link>
+        <id>8036</id>
+        <name>Google Play</name>
+        <link>https://www.goodreads.com/book_link/follow/8036</link>
+    </buy_link>
+    <buy_link>
+        <id>4</id>
+        <name>Abebooks</name>
+        <link>https://www.goodreads.com/book_link/follow/4</link>
+    </buy_link>
+    <buy_link>
+        <id>882</id>
+        <name>Book Depository</name>
+        <link>https://www.goodreads.com/book_link/follow/882</link>
+    </buy_link>
+    <buy_link>
+        <id>9</id>
+        <name>Indigo</name>
+        <link>https://www.goodreads.com/book_link/follow/9</link>
+    </buy_link>
+    <buy_link>
+        <id>2</id>
+        <name>Half.com</name>
+        <link>https://www.goodreads.com/book_link/follow/2</link>
+    </buy_link>
+    <buy_link>
+        <id>5</id>
+        <name>Alibris</name>
+        <link>https://www.goodreads.com/book_link/follow/5</link>
+    </buy_link>
+    <buy_link>
+        <id>107</id>
+        <name>Better World Books</name>
+        <link>https://www.goodreads.com/book_link/follow/107</link>
+    </buy_link>
+    <buy_link>
+        <id>7</id>
+        <name>IndieBound</name>
+        <link>https://www.goodreads.com/book_link/follow/7</link>
+    </buy_link>
+</buy_links>
+<series_works>
+
+  </series_works>
+</book>
+</GoodreadsResponse>
