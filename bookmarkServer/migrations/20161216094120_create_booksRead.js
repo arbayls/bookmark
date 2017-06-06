@@ -1,6 +1,6 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('booksRead', table => {
+  return knex.schema.createTable('booksread', table => {
     table.increments()
     table.string("title").notNullable()
     table.string("author").notNullable()
@@ -11,5 +11,5 @@ exports.up = function(knex, Promise) {
 }
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('posts')
+  return knex.schema.dropTable('booksread')
 }

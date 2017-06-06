@@ -1,6 +1,6 @@
 exports.seed = function(knex, Promise) {
 
-  return knex('booksToRead').del()
+  return knex('bookstoread').del()
     .then(function () {
       return Promise.all([
         createBookToRead(
@@ -21,7 +21,7 @@ exports.seed = function(knex, Promise) {
     })
 
   function createBookToRead(title, author, image_url, summary, user_id) {
-    return knex('booksToRead')
+    return knex('bookstoread')
       .insert({title, author, image_url, summary, user_id})
       .returning('id')
       .then(ids => ids[0])
