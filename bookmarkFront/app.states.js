@@ -12,9 +12,9 @@
 
     $stateProvider
       .state({
-        name: 'home',
+        name: 'login',
         url: '/',
-        component: 'app',
+        component: 'login',
       })
   }
 

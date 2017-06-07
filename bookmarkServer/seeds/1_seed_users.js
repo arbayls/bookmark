@@ -5,17 +5,19 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       return Promise.all([
         createUser(
-          "bob@fake.net"
+          "bob@fake.net",
+          "password"
         ),
         createUser(
-          "test@test.com"
+          "test@test.com",
+          "test"
         )
       ])
     })
 
-  function createUser(email) {
+  function createUser(email, password) {
     return knex('users')
-      .insert({email})
+      .insert({email, password})
       .returning('id')
       .then(ids => ids[0])
   }
