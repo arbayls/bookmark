@@ -7,15 +7,22 @@
 
   function config($stateProvider, $urlRouterProvider, $locationProvider){
 
-    // this line is optional
     $locationProvider.html5Mode(true)
-
+    $urlRouterProvider.otherwise('/')
     $stateProvider
+
       .state({
         name: 'login',
         url: '/',
-        component: 'login',
+        component: 'login'
       })
+
+      .state({
+        name: 'addbook',
+        url: '/:userId/addBook',
+        component: 'addBook'
+      })
+
   }
 
 }());
