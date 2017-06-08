@@ -1,9 +1,32 @@
 
-  <form ng-submit="$ctrl.login(email, password)">
-      <div class="container">
-          <input type="text" placeholder="Email" name="email" required ng-model="email">
-          <input type="password" placeholder="Password" name="password" required ng-model="password">
+<div class="login-container">
+    <h1>BOOKMARK</h1>
+    <p>a minimalist book organization tool</p>
+    <br>
+    <br>
 
-          <button type="submit">Login</button>
-      </div>
+      <!-- <form class="loginform" ng-submit="$ctrl.login(email, password)">
+
+              <input type="text" placeholder="Email" name="email" required ng-model="email">
+              <input type="password" placeholder="Password" name="password" required ng-model="password">
+
+              <button type="submit">Login</button>
+        </form> -->
+
+
+              <form class="loginform" ng-submit="$ctrl.login(email, password)">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input id="email" type="text" class="form-control" name="email" placeholder="Email" required ng-model="email">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input id="password" type="password" class="form-control" name="password" placeholder="Password" required ng-model="password">
+    </div>
+    <br>
+    <button type="submit">LOGIN</button>
+    <br>
   </form>
+  <br>
+
+</div>

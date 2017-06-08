@@ -1,10 +1,71 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url(the-book.jpg);
+  font: 18px "Poiret One", Helvetica, Arial, sans-serif;
   background-color: #cccccc;
+  background: url(smallreadingchair.jpg) no-repeat center center fixed;
+  background-size: 99vw 99vh;
 }
+
 
 a {
   color: #00B7FF;
+}
+
+body {
+  font-family: "Poiret One";
+  font-weight: 100;
+  font-size: 20px;
+  text-align: center;
+  font-variant: small-caps;
+}
+
+.form {
+  height: 28vh;
+  width: 40vw;
+  background-color: #cccccc;
+  margin-left: 100px;
+  margin-top: 100px;
+}
+
+.login-container {
+  background-color: #cccccc;
+  margin-top: 5vh;
+  margin-left: 5vw;
+  width: 30vw;
+  padding-top: 7vh;
+  padding-bottom: 8vh;
+}
+
+input {
+    padding: 0;
+    position: relative;
+    left: 0;
+    outline: none;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0,0,0,.15);
+    background-color: white;
+    font-size: 16px;
+    height: 4vh;
+}
+
+button {
+  padding: 0;
+  height: 30px;
+  position: relative;
+  left: 0;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-color: rgba(0,0,0,.15);
+  background-color: white;
+  font-size: 15px;
+  width: 18vw;
+  height: 3.5vh;
+  border-radius: 3px;
+}
+
+
+.input-group {
+    margin-left: 6vw;
+    width: 18vw;
+    margin: auto;
 }
