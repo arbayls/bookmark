@@ -53,5 +53,11 @@ router.delete('/:userId/votes', (req, res, next) => {
     .catch(err => next(err))
 })
 
+router.post('/:user_id/add', function(req, res, next) {
+  console.log(req.body);
+  knex.raw(`Insert into booksread(title, author, image_url, user_id) values ('${req.body.title}, '${req.body.author}', '${req.body.image_url}', 2)`).then(function(result) {
+    res.json(result);
+  })
+})
 
 module.exports = router;

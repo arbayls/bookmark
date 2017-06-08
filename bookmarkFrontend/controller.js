@@ -7,7 +7,7 @@ app.component('login', {
 
 app.component('searchBook', {
   templateUrl: 'recommendations.html',
-  controller: ['getBooksFromApiService', 'convertService', '$scope', searchBookController]
+  controller: ['getBooksFromApiService', 'convertService', 'addBookToReadService', 'addBookReadService', searchBookController]
 })
 // Login
   function loginController(loginService) {
@@ -26,7 +26,7 @@ app.component('searchBook', {
   }
 
 // Add a new book to a list
-  function searchBookController(getBooksFromApiService, convertService, $scope) {
+  function searchBookController(getBooksFromApiService, convertService, addBookToReadService, addBookReadService) {
     var ctrl = this;
     ctrl.booksFound = [];
     ctrl.noBooks = "";
@@ -46,13 +46,16 @@ app.component('searchBook', {
       })
     }
 
-    ctrl.addBook = function(title, author, notes) {
-      var bookData = {
-        title: title,
-        author: author,
-        notes: notes,
-      }
-      addBookService(bookData)
+    ctrl.addToRead = function(bookData) {
+      console.log(bookData);
+      addBookToReadService(bookData)
+      .then(function(results) {
+        console.log("Here's your book stuff! ", results);
+      })
+    }
+
+    ctrl.addRead = function(bookData) {
+      addBookReadService(bookData)
       .then(function(results) {
         console.log("Here's your book stuff! ", results);
       })

@@ -2,7 +2,8 @@ const bookmarkApi = "http://localhost:3000";
 
 angular.module('app')
   .service('loginService', ['$http', loginService])
-  .service('addBookService', ['$http', addBookService])
+  .service('addBookReadService', ['$http', addBookReadService])
+  .service('addBookToReadService', ['$http', addBookToReadService])
   .service('getBooksFromApiService', ['$http', getBooksFromApiService])
   .service('convertService', ['$http', convertService])
   // .service('someService', ['$http'])
@@ -13,9 +14,15 @@ function loginService($http) {
   }
 }
 
-function addBookService($http) {
+function addBookReadService($http) {
   return function(bookData) {
-    return $http.post(bookmarkApi + "/:userId/add")
+    return $http.post(bookmarkApi + "/booksread/2/add", bookData)
+  }
+}
+
+function addBookToReadService($http) {
+  return function(bookData) {
+    return $http.post(bookmarkApi + "/bookstoread/2/add", bookData)
   }
 }
 
