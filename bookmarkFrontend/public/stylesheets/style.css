@@ -1,9 +1,14 @@
 body {
   padding: 50px;
-  font: 18px "Poiret One", Helvetica, Arial, sans-serif;
-  background-color: #cccccc;
+  font: 16px "Poiret One", Helvetica, Arial, sans-serif;
   background: url(smallreadingchair.jpg) no-repeat center center fixed;
   background-size: 99vw 99vh;
+  background-color: #ffffff;
+}
+
+.recommendationspicwrapper {
+  margin: 0px 0px 0px 0px;
+  /*background: url(inksplatter.jpg) no-repeat center center fixed;*/
 }
 
 
@@ -68,4 +73,50 @@ button {
     margin-left: 6vw;
     width: 18vw;
     margin: auto;
+}
+
+.search {
+  padding: 0;
+  height: 30px;
+  position: relative;
+  left: 0;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-color: rgba(0,0,0,.15);
+  background-color: white;
+  font-size: 15px;
+  width: 18vw;
+  height: 3.5vh;
+  border-radius: 3px;
+  display: inline;
+}
+
+.navbar {
+  background-color: #cccccc;
+  padding-bottom: 2vw;
+  padding-top: 1vw;
+  padding-left: 2vw;
+  text-align: left;
+}
+
+.navbarbuttons {
+  margin: auto;
+}
+
+.book {
+  background-color: #cccccc;
+  padding-top: 4vh;
+  display: inline-block;
+  height: 350px;
+  margin: 20px 20px 20px 20px;
+}
+
+.addbuttonsdiv {
+  position: absolute;
+  right: -4px;
+  bottom: 0;
+}
+
+.row  {
+  background-color: #cccccc;
 }

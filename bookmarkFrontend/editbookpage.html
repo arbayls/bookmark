@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-8">
+
+        <form name="postForm" ng-submit="$ctrl.addBook(title, author, notes)" ng-if="$ctrl.showForm" novalidate>
+
+            <div>
+                <label for="title">Title</label>
+                <input name="title" id="title" class="form-control" ng-model="$ctrl.newPost.title" required="required"  ng-minlength="1">
+            </div>
+
+            <div>
+                <label for="author">Author</label>
+                <input name="author" id="author" class="form-control" ng-model="$ctrl.newPost.author" required="required" ng-minlength="3">
+            </div>
+
+            <div>
+                <label for="notes">Notes</label>
+                <textarea name="notes" id="notes" class="form-control" ng-model="$ctrl.newPost.notes" required="required"  ng-minlength="3"></textarea>
+            </div> -->
+
+            <!-- <div>
+                <label for="image-url">Image URL</label>
+                <input name="image-url" id="image-url" class="form-control" ng-model="$ctrl.newPost.image" required="required"  ng-minlength="3">
+            </div> -->
+
+            <!-- <div class="form-group" ng-disabled="post-form.$invalid">
+                  <button type="submit" class="btn btn-primary" ng-disabled="postForm.$invalid" >
+                    Add Book
+                  </button>
+            </div>
+        </form>
+    </div>
+</div>
