@@ -24,9 +24,15 @@
       })
 
       .state({
-        name: 'addbook',
-        url: '/:userId/addBook',
-        component: 'addBook'
+        name: 'toRead',
+        url: '/toread',
+        component: 'toRead'
+      })
+
+      .state({
+        name: 'read',
+        url: '/read',
+        component: 'read'
       })
 
   }

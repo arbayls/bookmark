@@ -12,8 +12,9 @@ router.get('/:userId', function(req, res, next) {
 // Delete book from user's list
 router.delete('/:userId/:bookId/delete', function (req, res, next) {
   var id = req.params.id;
-  knex.raw(`DELETE from bookstoread WHERE id=${req.params.id}`).then(function(book) {
-    res.redirect('/:userId');
+
+  knex.raw(`DELETE from bookstoread WHERE user_id=${req.params.userId} AND id=${req.params.bookId}`).then(function(book) {
+    res.json(book);
   });
 });
 

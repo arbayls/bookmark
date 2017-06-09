@@ -9,6 +9,15 @@ app.component('searchBook', {
   templateUrl: 'recommendations.html',
   controller: ['getBooksFromApiService', 'convertService', 'addBookToReadService', 'addBookReadService', searchBookController]
 })
+
+app.component('toRead', {
+  templateUrl: 'toreadbooklist.html',
+  controller: ['getToReadBooksService', 'deleteBookFromToReadService', toReadController]
+})
+
+app.component('read', {
+  templateUrl: 'readbookslist.html'
+})
 // Login
   function loginController(loginService) {
     var ctrl = this;
@@ -61,3 +70,22 @@ app.component('searchBook', {
       })
     }
   }
+
+function toReadController(getToReadBooksService, deleteBookFromToReadService) {
+  var ctrl = this;
+  getBooks();
+  
+  ctrl.delete = function(book) {
+    deleteBookFromToReadService(book).then(function(result) {
+      console.log(result);
+      getBooks();
+    })
+  }
+
+  function getBooks() {
+    getToReadBooksService().then(function(books) {
+      ctrl.toReadBooks = books.data.rows;
+      console.log(ctrl.toReadBooks);
+    })
+  }
+}

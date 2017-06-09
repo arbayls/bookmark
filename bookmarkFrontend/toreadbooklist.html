@@ -14,28 +14,26 @@
   <h2>TO-READ BOOKS</h2>
 
 <main class="container">
+  <div>
+    <div class="row">
+      <div class="col-md-3" ng-repeat="book in $ctrl.toReadBooks">
+        <div class="book">
+          <img src={{book.image_url}} alt="" class="cover">
+          <p class="title">{{book.title}}</p>
+          <p class="author">By: {{book.author}}</p>
 
-    <h1>{{$ctrl.noBooks}}</h1>
-      <div >
-        <div class="row">
-          <div class="col-md-3" ng-repeat="book in $ctrl.booksFound">
-            <div class="book">
-              <img src={{book.best_book[0].image_url[0]}} alt="" class="cover">
-              <p class="title">{{book.best_book[0].title[0]}}</p>
-              <p class="author">By: {{book.best_book[0].author[0].name[0]}}</p>
+          <div class="addbuttonsdiv">
 
-              <div class="addbuttonsdiv">
+            <button type="addbutton" name="haveread" ng-click="$ctrl.addToRead(book)">i read this book</button>
 
-              <button  type="addbutton" name="addtoread" ng-click="$ctrl.addToRead({image_url: book.best_book[0].image_url[0], title: book.best_book[0].title[0], author: book.best_book[0].author[0].name[0]})">to-read</button>
-
-              <button type="addbutton" name="haveread" ng-click="$ctrl.addRead({image_url: book.best_book[0].image_url[0], title: book.best_book[0].title[0], author: book.best_book[0].author[0].name[0]})">already read</button>
-              </div>
-            </div>
+            <button  type="addbutton" name="addtoread" ng-click="$ctrl.delete(book)">delete from list</button>
           </div>
         </div>
       </div>
-    <div class="row" ng-repeat="post in $ctrl.posts | orderBy: 'vote_count' : true | filter:searchText | orderBy:sortBy">
-        <post post='post'></post>
     </div>
+  </div>
+  <div class="row" ng-repeat="post in $ctrl.posts | orderBy: 'vote_count' : true | filter:searchText | orderBy:sortBy">
+      <post post='post'></post>
+  </div>
 </main>
 </div>

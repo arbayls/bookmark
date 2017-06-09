@@ -6,6 +6,8 @@ angular.module('app')
   .service('addBookToReadService', ['$http', addBookToReadService])
   .service('getBooksFromApiService', ['$http', getBooksFromApiService])
   .service('convertService', ['$http', convertService])
+  .service('getToReadBooksService', ['$http', getToReadBooksService])
+  .service('deleteBookFromToReadService', ['$http', deleteBookFromToReadService])
   // .service('someService', ['$http'])
 
 function loginService($http) {
@@ -38,7 +40,17 @@ function convertService($http) {
   }
 }
 
+function getToReadBooksService($http) {
+  return function() {
+    return $http.get(bookmarkApi + "/booksToRead/2")
+  }
+}
 
+function deleteBookFromToReadService($http) {
+  return function(book) {
+    return $http.delete(bookmarkApi + "/booksToRead/2/"+book.id+'/delete', book)
+  }
+}
 
 // const bookmarkApi = "http://localhost:3000";
 //
