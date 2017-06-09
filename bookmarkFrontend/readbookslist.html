@@ -4,14 +4,16 @@
     <div class='page-header'>
       <div class='btn-toolbar pull-right'>
           <div class='btn-group'>
-            <button type="button" name="button">to-read list</button><button type="button" name="button">previously-read list</button><button type="button" name="button">find books</button><button type="button" name="button">logout</button>
+            <a ui-sref="toRead"><button type="button" name="button">to-read list</button></a>
+            <a ui-sref="read"><button type="button" name="button">previously-read list</button></a>
+            <a ui-sref="home"><button type="button" name="button">find books</button><button type="button" name="button">logout</button></a>
           </div>
         </div>
         <h2>BOOKMARK</h2>
       </div>
 </nav>
 
-  <h2>ALREADY-READ BOOKS</h2>
+  <h2>PREVIOUSLY-READ BOOKS</h2>
 
   <main class="container">
     <div>
@@ -21,7 +23,17 @@
             <img src={{book.image_url}} alt="" class="cover">
             <p class="title">{{book.title}}</p>
             <p class="author">By: {{book.author}}</p>
-
+            <div class="row">
+              <div class="col-md-2 center">
+                <i class="glyphicon glyphicon-arrow-down" ng-click="$ctrl.downvote(book)"></i>
+              </div>
+              <div class="col-md-8 center">
+                <i class="glyphicon glyphicon-star" ng-repeat="star in $ctrl.getRating(book.rating) track by $index"></i>
+              </div>
+              <div class="col-md-2 center">
+                <i class="glyphicon glyphicon-arrow-up" ng-click="$ctrl.upvote(book)"></i>
+              </div>
+            </div>
             <div class="addbuttonsdiv">
 
               <button  type="addbutton" name="addtoread" ng-click="$ctrl.delete(book)">delete from list</button>

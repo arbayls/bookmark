@@ -42,7 +42,7 @@ router.post('/:user_id/add', function(req, res, next) {
 
 router.post('/:userId/:bookId/read', function (req, res, next) {
   var book = req.body
-  knex.raw(`INSERT INTO booksread(title, author, image_url, user_id) VALUES ('${book.title}', '${book.author}', '${book.image_url}', ${book.user_id})`).then(function(result) {
+  knex.raw(`INSERT INTO booksread(title, author, image_url, user_id, rating) VALUES ('${book.title}', '${book.author}', '${book.image_url}', ${book.user_id}, 3)`).then(function(result) {
     knex.raw(`DELETE from bookstoread WHERE user_id=${req.params.userId} AND id=${req.params.bookId}`).then(function(book) {
       res.json(book);
     })

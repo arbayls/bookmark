@@ -17,7 +17,7 @@ app.component('toRead', {
 
 app.component('read', {
   templateUrl: 'readbookslist.html',
-  controller: ['getReadBooksService', 'deleteBookFromReadService', readController]
+  controller: ['getReadBooksService', 'deleteBookFromReadService', 'upvoteService', 'downvoteService', readController]
 })
 // Login
   function loginController(loginService) {
@@ -98,9 +98,29 @@ function toReadController(getToReadBooksService, deleteBookFromToReadService, ch
 
 
 
-function readController(getReadBooksService, deleteBookFromReadService){
+function readController(getReadBooksService, deleteBookFromReadService, upvoteService, downvoteService) {
 var ctrl = this;
 getBooks();
+
+  ctrl.getRating = function(num) {
+    var newArr = [];
+    for (var i = 1; i <= num; i++) {
+      newArr.push(i);
+    }
+    return newArr
+  }
+
+  ctrl.downvote = function(book) {
+    if (book.rating === 1) return;
+    book.rating--
+    downvoteService(book)
+  }
+
+  ctrl.upvote = function(book) {
+    if (book.rating === 5) return;
+    book.rating++
+    upvoteService(book)
+  }
 
   ctrl.delete = function(book) {
     deleteBookFromReadService(book).then(function(result) {
@@ -109,11 +129,8 @@ getBooks();
   }
 
   function getBooks() {
-    console.log('TGHIS IS BEFORE THE SERVICE');
     getReadBooksService().then(function(books) {
-      console.log("THIS IS AFTER THE SERVICE");
       ctrl.readBooks = books.data.rows;
-      console.log(ctrl.readBooks);
     })
   }
 }

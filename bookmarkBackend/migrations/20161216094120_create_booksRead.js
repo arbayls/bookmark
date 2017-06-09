@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
     table.string("author").notNullable()
     table.string("image_url").notNullable()
     table.integer("user_id").index().references("id").inTable("users").onDelete("cascade").notNullable()
+    table.integer("rating").notNullable()
   })
 }
 

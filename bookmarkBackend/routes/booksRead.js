@@ -54,7 +54,19 @@ router.delete('/:userId/votes', (req, res, next) => {
 
 router.post('/:user_id/add', function(req, res, next) {
   console.log(req.body);
-  knex.raw(`Insert into booksread(title, author, image_url, user_id) values ('${req.body.title}', '${req.body.author}', '${req.body.image_url}', 2)`).then(function(result) {
+  knex.raw(`Insert into booksread(title, author, image_url, user_id, rating) values ('${req.body.title}', '${req.body.author}', '${req.body.image_url}', 2, 3)`).then(function(result) {
+    res.json(result);
+  })
+})
+
+router.put('/:user_id/:book_id/upvote', function(req, res, next) {
+  knex.raw(`UPDATE booksread SET rating = ${req.body.rating} WHERE id = ${req.params.book_id} AND user_id = ${req.params.user_id}`).then(function(result) {
+    res.json(result);
+  })
+})
+
+router.put('/:user_id/:book_id/downvote', function(req, res, next) {
+  knex.raw(`UPDATE booksread SET rating = ${req.body.rating} WHERE id = ${req.params.book_id} AND user_id = ${req.params.user_id}`).then(function(result) {
     res.json(result);
   })
 })

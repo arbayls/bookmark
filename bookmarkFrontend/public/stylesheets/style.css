@@ -13,7 +13,7 @@ body {
 
 
 a {
-  color: #00B7FF;
+  color: inherit;
 }
 
 body {
@@ -67,7 +67,6 @@ button {
   height: 3.5vh;
   border-radius: 3px;
 }
-
 
 .input-group {
     margin-left: 6vw;

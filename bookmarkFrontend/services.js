@@ -12,6 +12,8 @@ angular.module('app')
 
   .service('getReadBooksService', ['$http', getReadBooksService])
   .service('deleteBookFromReadService', ['$http', deleteBookFromReadService])
+  .service('upvoteService', ['$http', upvoteService])
+  .service('downvoteService', ['$http', downvoteService])
   // .service('someService', ['$http'])
 
 function loginService($http) {
@@ -74,6 +76,17 @@ function deleteBookFromReadService($http) {
   }
 }
 
+function upvoteService($http) {
+  return function(book) {
+    return $http.put(bookmarkApi + "/booksRead/2/"+book.id+"/upvote", book)
+  }
+}
+
+function downvoteService($http) {
+  return function(book) {
+    return $http.put(bookmarkApi + "/booksRead/2/"+book.id+"/downvote", book)
+  }
+}
 // const bookmarkApi = "http://localhost:3000";
 //
 // angular.module('app')
