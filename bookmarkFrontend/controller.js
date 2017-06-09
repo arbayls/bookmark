@@ -17,7 +17,15 @@ app.component('toRead', {
 
 app.component('read', {
   templateUrl: 'readbookslist.html',
-  controller: ['getReadBooksService', 'deleteBookFromReadService', 'upvoteService', 'downvoteService', readController]
+  controller: ['getReadBooksService', 'deleteBookFromReadService', readController]
+})
+
+app.component('readbook', {
+  bindings: {
+    book: "="
+  },
+  templateUrl: 'readbook.html',
+  controller: ['upvoteService', 'downvoteService', readbookController]
 })
 // Login
   function loginController(loginService) {
@@ -102,6 +110,22 @@ function readController(getReadBooksService, deleteBookFromReadService, upvoteSe
 var ctrl = this;
 getBooks();
 
+  ctrl.delete = function(book) {
+    deleteBookFromReadService(book).then(function(result) {
+      getBooks();
+    })
+  }
+
+  function getBooks() {
+    getReadBooksService().then(function(books) {
+      ctrl.readBooks = books.data.rows;
+    })
+  }
+}
+
+function readbookController(upvoteService, downvoteService) {
+  var ctrl = this;
+
   ctrl.getRating = function(num) {
     var newArr = [];
     for (var i = 1; i <= num; i++) {
@@ -120,17 +144,5 @@ getBooks();
     if (book.rating === 5) return;
     book.rating++
     upvoteService(book)
-  }
-
-  ctrl.delete = function(book) {
-    deleteBookFromReadService(book).then(function(result) {
-      getBooks();
-    })
-  }
-
-  function getBooks() {
-    getReadBooksService().then(function(books) {
-      ctrl.readBooks = books.data.rows;
-    })
   }
 }

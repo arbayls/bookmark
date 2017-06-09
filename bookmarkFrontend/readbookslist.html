@@ -18,28 +18,7 @@
   <main class="container">
     <div>
       <div class="row">
-        <div class="col-md-3" ng-repeat="book in $ctrl.readBooks">
-          <div class="book">
-            <img src={{book.image_url}} alt="" class="cover">
-            <p class="title">{{book.title}}</p>
-            <p class="author">By: {{book.author}}</p>
-            <div class="row">
-              <div class="col-md-2 center">
-                <i class="glyphicon glyphicon-arrow-down" ng-click="$ctrl.downvote(book)"></i>
-              </div>
-              <div class="col-md-8 center">
-                <i class="glyphicon glyphicon-star" ng-repeat="star in $ctrl.getRating(book.rating) track by $index"></i>
-              </div>
-              <div class="col-md-2 center">
-                <i class="glyphicon glyphicon-arrow-up" ng-click="$ctrl.upvote(book)"></i>
-              </div>
-            </div>
-            <div class="addbuttonsdiv">
-
-              <button  type="addbutton" name="addtoread" ng-click="$ctrl.delete(book)">delete from list</button>
-            </div>
-          </div>
-        </div>
+        <readbook book="$ctrl.readBooks"></readbook>
       </div>
     </div>
     <div class="row" ng-repeat="post in $ctrl.posts | orderBy: 'vote_count' : true | filter:searchText | orderBy:sortBy">
