@@ -7,7 +7,7 @@ app.component('login', {
 
 app.component('searchBook', {
   templateUrl: 'recommendations.html',
-  controller: ['getBooksFromApiService', 'convertService', 'addBookToReadService', 'addBookReadService', searchBookController]
+  controller: ['getBooksFromApiService', 'convertService', 'addBookToReadService', 'addBookReadService', '$state', searchBookController]
 })
 
 app.component('toRead', {
@@ -44,7 +44,7 @@ app.component('readbook', {
   }
 
 // Add a new book to a list
-  function searchBookController(getBooksFromApiService, convertService, addBookToReadService, addBookReadService) {
+  function searchBookController(getBooksFromApiService, convertService, addBookToReadService, addBookReadService, $state) {
     var ctrl = this;
     ctrl.booksFound = [];
     ctrl.noBooks = "";
@@ -68,14 +68,14 @@ app.component('readbook', {
       console.log(bookData);
       addBookToReadService(bookData)
       .then(function(results) {
-        console.log("Here's your book stuff! ", results);
+        $state.go("toRead");
       })
     }
 
     ctrl.addRead = function(bookData) {
       addBookReadService(bookData)
       .then(function(results) {
-        console.log("Here's your book stuff! ", results);
+        $state.go("read");
       })
     }
   }
