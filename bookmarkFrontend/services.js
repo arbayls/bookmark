@@ -8,6 +8,10 @@ angular.module('app')
   .service('convertService', ['$http', convertService])
   .service('getToReadBooksService', ['$http', getToReadBooksService])
   .service('deleteBookFromToReadService', ['$http', deleteBookFromToReadService])
+  .service('changeToReadService', ['$http', changeToReadService])
+
+  .service('getReadBooksService', ['$http', getReadBooksService])
+  .service('deleteBookFromReadService', ['$http', deleteBookFromReadService])
   // .service('someService', ['$http'])
 
 function loginService($http) {
@@ -49,6 +53,24 @@ function getToReadBooksService($http) {
 function deleteBookFromToReadService($http) {
   return function(book) {
     return $http.delete(bookmarkApi + "/booksToRead/2/"+book.id+'/delete', book)
+  }
+}
+
+function changeToReadService($http) {
+  return function(book) {
+    return $http.post(bookmarkApi + "/booksToRead/2/"+book.id+"/read", book)
+  }
+}
+
+function getReadBooksService($http) {
+  return function() {
+    return $http.get(bookmarkApi + "/booksRead/2/")
+  }
+}
+
+function deleteBookFromReadService($http) {
+  return function(book) {
+    return $http.delete(bookmarkApi + "/booksRead/2/"+book.id+'/delete', book)
   }
 }
 

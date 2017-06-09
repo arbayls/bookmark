@@ -1,4 +1,3 @@
-
 var express = require('express');
 var router = express.Router();
 var knex = require('../db');
@@ -13,8 +12,8 @@ router.get('/:userId', function(req, res, next) {
 // Delete book from user's list
 router.delete('/:userId/:bookId/delete', function (req, res, next) {
   var id = req.params.id;
-  knex.raw(`DELETE from booksread WHERE id=${req.params.id}`).then(function(book) {
-    res.redirect('/:userId');
+  knex.raw(`DELETE from booksread WHERE id=${req.params.bookId} AND user_id=${req.params.userId}`).then(function(book) {
+    res.json(book);
   });
 });
 

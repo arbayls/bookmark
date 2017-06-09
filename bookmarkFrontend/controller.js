@@ -12,11 +12,12 @@ app.component('searchBook', {
 
 app.component('toRead', {
   templateUrl: 'toreadbooklist.html',
-  controller: ['getToReadBooksService', 'deleteBookFromToReadService', toReadController]
+  controller: ['getToReadBooksService', 'deleteBookFromToReadService', 'changeToReadService', toReadController]
 })
 
 app.component('read', {
-  templateUrl: 'readbookslist.html'
+  templateUrl: 'readbookslist.html',
+  controller: ['getReadBooksService', 'deleteBookFromReadService', readController]
 })
 // Login
   function loginController(loginService) {
@@ -71,13 +72,18 @@ app.component('read', {
     }
   }
 
-function toReadController(getToReadBooksService, deleteBookFromToReadService) {
+function toReadController(getToReadBooksService, deleteBookFromToReadService, changeToReadService) {
   var ctrl = this;
   getBooks();
-  
+
   ctrl.delete = function(book) {
     deleteBookFromToReadService(book).then(function(result) {
-      console.log(result);
+      getBooks();
+    })
+  }
+
+  ctrl.addToRead = function(book) {
+    changeToReadService(book).then(function(result) {
       getBooks();
     })
   }
@@ -86,6 +92,28 @@ function toReadController(getToReadBooksService, deleteBookFromToReadService) {
     getToReadBooksService().then(function(books) {
       ctrl.toReadBooks = books.data.rows;
       console.log(ctrl.toReadBooks);
+    })
+  }
+}
+
+
+
+function readController(getReadBooksService, deleteBookFromReadService){
+var ctrl = this;
+getBooks();
+
+  ctrl.delete = function(book) {
+    deleteBookFromReadService(book).then(function(result) {
+      getBooks();
+    })
+  }
+
+  function getBooks() {
+    console.log('TGHIS IS BEFORE THE SERVICE');
+    getReadBooksService().then(function(books) {
+      console.log("THIS IS AFTER THE SERVICE");
+      ctrl.readBooks = books.data.rows;
+      console.log(ctrl.readBooks);
     })
   }
 }
